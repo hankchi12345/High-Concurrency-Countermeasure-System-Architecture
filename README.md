@@ -1,16 +1,29 @@
-##  High-Concurrency-Countermeasure-System-Architecture
-#   高並發對策系統架構
+# High-Concurrency Countermeasure System Architecture
 
-##  系統架構概述
+架構核心目標
+限流保護：防止惡意請求或大量湧入導致 API 當機
 
-###  使用者請求流程
+高併發應對：快速處理多個使用者同時購買
 
-* **使用者：** 使用瀏覽器發起請求。
-    * **前端頁面：** 使用者在瀏覽器中存取的靜態頁面。
-    * **Nginx (API 閘道)：** 接收使用者請求，進行路由和轉發。
-        * **Node.js 後端 API (Express)：** 處理業務邏輯。
-            * **Redis：** 用於限流和快取。
-            * **PostgreSQL：** 用於儲存訂單資料。
+監控告警：在系統異常（如 Redis 快爆滿）時告警
+
+可部署到地端與雲端：展示不依賴現場網路
+
+
+# 本專案是為「限流防護」設計的全端架構，包含：
+
+-  限制流量 API（Node.js + Redis 限流）
+-  地端 API Gateway（Nginx）
+-  即時監控系統（Prometheus + Grafana）
+-  支援 EC2 / Minikube / 本地開發
+
+---
+
+#  架構圖
+
+
+
+
 
 ---
 
