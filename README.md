@@ -20,7 +20,7 @@
 ---
 
 #  架構圖
-
+![系統架構圖](seckill-api/images/diagram.PNG "架構圖")
 
 
 
